@@ -1,0 +1,364 @@
+/* @theme lis-lab */
+
+@import 'default';
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Source+Code+Pro:wght@400;500&display=swap');
+
+:root {
+  /* Colors from 研究発表用テンプレート2022版 */
+  --text-primary: #4D4D4D;
+  --text-light: #7F7F7F;
+  --bg-main: #F8F8F8;
+  --bg-white: #FFFFFF;
+  --accent-blue: #2E5B96;
+  --accent-red: #C03936;
+  --accent-orange: #ED7D31;
+  --accent-green: #3E9288;
+  --border-color: #B2B2B2;
+}
+
+/* ===== Base Section ===== */
+section {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  padding: 80px 50px 50px 50px;
+  position: relative;
+}
+
+/* Header bar — disabled */
+section::before {
+  display: none;
+}
+
+/* ===== Typography ===== */
+section h1 {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.7em;
+  border-bottom: none;
+  padding-bottom: 16px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  line-height: 1.4;
+  display: inline-block;
+  position: relative;
+}
+
+section h1::before {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  width: calc(100% + 40px);
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-green) 60%, transparent 100%);
+  border-radius: 2px;
+}
+
+section h1::after {
+  display: none;
+}
+
+section h2 {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.3em;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+section h3 {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.05em;
+}
+
+section p,
+section li {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  font-size: 0.88em;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+section a {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+section strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+section em strong,
+section strong em {
+  color: var(--accent-blue);
+  font-style: normal;
+}
+
+section em {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ===== Lists (Wingdings-style bullets) ===== */
+section ul {
+  list-style: disc;
+  margin-left: 0.5em;
+  padding-left: 1.2em;
+}
+
+section ul > li {
+  margin-bottom: 0.35em;
+}
+
+section ul > li::marker {
+  color: var(--accent-blue);
+  font-size: 0.8em;
+}
+
+section ul ul {
+  list-style: disc;
+}
+
+section ul ul > li::marker {
+  font-size: 0.6em;
+}
+
+section ol {
+  margin-left: 0.5em;
+}
+
+section li {
+  margin-bottom: 0.3em;
+}
+
+/* ===== Header (right-aligned, before page number) ===== */
+header {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 500;
+  font-size: 0.6em;
+  color: var(--text-light);
+  letter-spacing: 0.03em;
+  position: absolute;
+  top: 18px;
+  right: 60px;
+  left: auto;
+  width: auto;
+  text-align: right;
+}
+
+/* ===== Tables ===== */
+section table {
+  border-collapse: collapse;
+  width: auto;
+  font-size: 0.82em;
+  margin: 12px auto;
+}
+
+section table th {
+  background: var(--accent-blue);
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 10px 16px;
+  text-align: left;
+  border: none;
+}
+
+section table td {
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-white);
+}
+
+section table tr:nth-child(even) td {
+  background: var(--bg-main);
+}
+
+/* ===== Code ===== */
+section code {
+  font-family: 'Source Code Pro', monospace;
+  background: var(--bg-main);
+  color: var(--accent-blue);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: 1px solid var(--border-color);
+}
+
+section pre {
+  background: #1E1E1E;
+  border-radius: 6px;
+  padding: 16px;
+  border-left: 4px solid var(--accent-blue);
+}
+
+section pre code {
+  background: transparent;
+  color: #D4D4D4;
+  border: none;
+  padding: 0;
+}
+
+/* ===== Blockquote ===== */
+section blockquote {
+  border-left: 4px solid var(--accent-blue);
+  background: var(--bg-main);
+  padding: 12px 20px;
+  margin: 16px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.88em;
+  color: var(--text-light);
+}
+
+/* ===== Images ===== */
+section img {
+  border-radius: 2px;
+}
+
+/* ===== Footer ===== */
+footer {
+  font-size: 0.6em;
+  color: var(--text-light);
+}
+
+/* ===== Pagination — right top, next to header ===== */
+section[data-marpit-pagination]::after {
+  content: '|  ' attr(data-marpit-pagination);
+  position: absolute;
+  top: 18px;
+  right: 30px;
+  font-size: 0.6em;
+  color: var(--text-light);
+  font-weight: 500;
+  font-family: 'Noto Sans JP', sans-serif;
+  width: auto;
+  height: auto;
+  background: none;
+  bottom: auto;
+  left: auto;
+}
+
+/* ==========================================================
+   Title Slide — タイトル スライド
+   ========================================================== */
+section.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  padding: 60px 80px 80px 80px;
+  border-left: 8px solid var(--accent-blue);
+}
+
+section.title::before {
+  display: none;
+}
+
+section.title[data-marpit-pagination]::after {
+  display: none;
+}
+
+section.title h1 {
+  color: var(--text-primary);
+  font-size: 2.4em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+section.title h1::before,
+section.title h1::after,
+section.divider h1::before,
+section.divider h1::after,
+section.end h1::before,
+section.end h1::after {
+  display: none;
+}
+
+section.title h2 {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-top: 16px;
+}
+
+section.title p {
+  color: var(--text-primary);
+  font-size: 1.0em;
+}
+
+/* ==========================================================
+   Section Divider Slide
+   ========================================================== */
+section.divider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-main);
+}
+
+section.divider::before {
+  display: none;
+}
+
+section.divider h1 {
+  color: var(--text-primary);
+  font-size: 2.2em;
+  border-bottom: none;
+}
+
+section.divider p {
+  color: var(--text-light);
+  font-size: 1.1em;
+  margin-top: 16px;
+}
+
+/* ==========================================================
+   End Slide
+   ========================================================== */
+section.end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--bg-white);
+  color: var(--text-primary);
+}
+
+section.end::before {
+  display: none;
+}
+
+section.end[data-marpit-pagination]::after {
+  display: none;
+}
+
+section.end h1 {
+  color: var(--text-primary);
+  font-size: 2.5em;
+  border-bottom: none;
+}
+
+section.end p {
+  color: var(--text-light);
+  font-size: 1.1em;
+}
+
+/* ==========================================================
+   Utility classes
+   ========================================================== */
+section .blue { color: var(--accent-blue); }
+section .red { color: var(--accent-red); }
+section .orange { color: var(--accent-orange); }
+section .green { color: var(--accent-green); }

@@ -1,0 +1,18 @@
+{
+  "name": "meeting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preview": "marp -s .",
+    "build": "marp --input-dir . --output ./dist",
+    "build:pdf": "marp --input-dir . --output ./dist --pdf"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.3.0"
+  }
+}
